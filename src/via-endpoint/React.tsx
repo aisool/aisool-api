@@ -14,7 +14,7 @@ const fetchData = async () => {
     });
 
     if (!res.ok) throw new Error('API request failed');
-
+ 
     const data = await res.json();
     const message = data.choices?.[0]?.message;
 
