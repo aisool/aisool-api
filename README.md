@@ -1,4 +1,4 @@
-Use aisool API via endpoint ⬇️
+Use aisool API via endpoint ⬇️  // Unlimited usage: RPD, RPM, TPM
 
 ```ts
 const fetchData = async () => {
@@ -32,7 +32,7 @@ const fetchData = async () => {
 };
 ```
 
-Or via SDK ⬇️
+Or via SDK ⬇️ // Unlimited usage: RPD, RPM, TPM
 
 ````markdown
 # Aisool SDK
@@ -218,3 +218,4 @@ MIT License © 2026 AiSool
 ---
 
 Built with ❤️ for developers.
+
