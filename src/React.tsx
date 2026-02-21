@@ -1,7 +1,7 @@
 // Using Fetch in React / React Native / Expo
 const fetchData = async () => {
   try {
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    const res = await fetch('https://aisool-max-v2.hf.space/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
