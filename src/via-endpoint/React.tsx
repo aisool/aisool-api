@@ -28,3 +28,32 @@ const fetchData = async () => {
     console.error(err);
   }
 };
+
+
+// Image Generation in React
+const generateImage = async () => {
+  try {
+    const res = await fetch('https://api.aisool.com/v1/images/generations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR_API_KEY' 
+      },
+      body: JSON.stringify({
+        prompt: 'A majestic mountain range at sunset',
+        n: 1,
+        size: '1024x1024'
+      })
+    });
+
+    if (!res.ok) throw new Error('Image request failed');
+
+    const data = await res.json();
+    const imageUrl = data.data?.[0]?.url;
+
+    console.log('Generated Image Source:', imageUrl);
+    return imageUrl;
+  } catch (err) {
+    console.error(err);
+  }
+};
