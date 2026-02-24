@@ -1,3 +1,4 @@
+// Using Fetch in JavaScript
 const fetchData = async () => {
   try {
     const res = await fetch('https://api.aisool.com/v1/chat/completions', {
@@ -27,7 +28,6 @@ const fetchData = async () => {
     console.error(err);
   }
 };
-
 // Image Generation in JavaScript
 const generateImage = async () => {
   try {
@@ -35,7 +35,7 @@ const generateImage = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "Authorization": 'Bearer ${safeKey}' ${warning}
+        "Authorization": 'Bearer YOUR_API_KEY' 
       },
       body: JSON.stringify({
         prompt: "A futuristic city in the style of Cyberpunk",
@@ -48,7 +48,7 @@ const generateImage = async () => {
 
     const data = await res.json();
 
-    // The image data is a Base64 string
+    // The image data is usually a Base64 string or URL
     console.log("Image URL:", data.data[0].url);
     console.log("Created At:", data.created);
 
