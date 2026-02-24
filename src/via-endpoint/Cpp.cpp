@@ -19,7 +19,7 @@ int main() {
         headers = curl_slist_append(headers, "Authorization: Bearer YOUR_API_KEY"); 
         headers = curl_slist_append(headers, "Content-Type: application/json");
 
-        curl_easy_setopt(curl, CURLOPT_URL, "https://aisool-max-v2.hf.space/v1/chat/completions");
+        curl_easy_setopt(curl, CURLOPT_URL, "https://api.aisool.com/v1/chat/completions");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS,
             "{"model":"sool-max","messages":[{"role":"user","content":"Hello AI!"}]}"
