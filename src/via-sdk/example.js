@@ -21,3 +21,15 @@ async function askAI() {
 }
 
 askAI();
+
+// Image generation
+async function generateArt() {
+  try {
+    const response = await client.generateImage('A futuristic neon city at night');
+    console.log('Image URL (Base64):', response.data[0].url);
+  } catch (error: any) {
+    console.error('Error:', error.message);
+  }
+}
+
+generateArt();
