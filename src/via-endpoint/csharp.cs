@@ -27,7 +27,7 @@ class Program
         try
         {
             var response = await client.PostAsync(
-                'https://aisool-max-v2.hf.space/v1/chat/completions',
+                'https://api.aisool.com/v1/chat/completions',
                 content
             );
 
