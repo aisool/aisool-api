@@ -45,7 +45,7 @@ const generateArt = async () => {
       },
       {
         headers: {
-          'Authorization': 'Bearer ${safeKey}', ${warning}
+          'Authorization': 'Bearer YOUR_API_KEY', 
           'Content-Type': 'application/json'
         } 
       }
