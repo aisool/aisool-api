@@ -27,3 +27,33 @@ const fetchData = async () => {
     console.error(err);
   }
 };
+
+// Image Generation in JavaScript
+const generateImage = async () => {
+  try {
+    const res = await fetch('https://api.aisool.com/v1/images/generations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        "Authorization": 'Bearer ${safeKey}' ${warning}
+      },
+      body: JSON.stringify({
+        prompt: "A futuristic city in the style of Cyberpunk",
+        n: 1,
+        size: "1024x1024"
+      })
+    });
+
+    if (!res.ok) throw new Error("Image request failed");
+
+    const data = await res.json();
+
+    // The image data is a Base64 string
+    console.log("Image URL:", data.data[0].url);
+    console.log("Created At:", data.created);
+
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
