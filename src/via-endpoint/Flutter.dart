@@ -30,7 +30,7 @@ import 'package:http/http.dart' as http;
 final response = await http.post(
   Uri.parse('https://api.aisool.com/v1/images/generations'),
   headers: {
-    'Authorization': 'Bearer ${safeKey}', ${warning}
+    'Authorization': 'Bearer YOUR_API_KEY', 
     'Content-Type': 'application/json',
   },
   body: jsonEncode({
@@ -43,5 +43,5 @@ final response = await http.post(
 final data = jsonDecode(response.body);
 final imageUrl = data['data'][0]['url'];
 
-print('Created at: ${data['created']}');
-print('Image Source: ${imageUrl}'); 
+print('Created at: ${data['created']}'); 
+print('Image Source: ${imageUrl}');
