@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://aisool-max-v2.hf.space/v1/chat/completions'
+url = 'https://api.aisool.com/v1/chat/completions'
 headers = {
     'Authorization': 'Bearer YOUR_API_KEY', 
     'Content-Type': 'application/json'
