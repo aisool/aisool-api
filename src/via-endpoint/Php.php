@@ -1,5 +1,5 @@
 <?php
-$ch = curl_init('https://aisool-max-v2.hf.space/v1/chat/completions');
+$ch = curl_init('https://api.aisool.com/v1/chat/completions');
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Authorization: Bearer YOUR_API_KEY', 
     'Content-Type: application/json'
