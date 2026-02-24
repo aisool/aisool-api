@@ -3,7 +3,7 @@ const axios = require('axios');
 const callAi = async () => {
   try {
     const res = await axios.post(
-      'https://aisool-max-v2.hf.space/v1/chat/completions',
+      'https://api.aisool.com/v1/chat/completions',
       {
         model: 'sool-max',
         messages: [{ role: 'user', content: 'Hello AI!' }]
