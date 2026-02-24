@@ -43,3 +43,26 @@ int main() {
         }
     }
 }
+
+// image generation
+#include <curl/curl.h>
+#include <iostream>
+#include <nlohmann/json.hpp>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        std::string readBuffer;
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Authorization: Bearer ${safeKey}"); ${warning}
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://api.aisool.com/v1/images/generations");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\":\"A fantasy forest\",\"n\":1"}");
+        
+        auto json = nlohmann::json::parse(readBuffer);
+        std::cout << "Image Data: " << json["data"][0]["url"] << std::endl;
+        curl_easy_cleanup(curl);
+    }
+}
