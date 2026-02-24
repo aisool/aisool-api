@@ -1,7 +1,6 @@
-// Using Fetch in JavaScript
 const fetchData = async () => {
   try {
-    const res = await fetch('https://aisool-max-v2.hf.space/v1/chat/completions', {
+    const res = await fetch('https://api.aisool.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
