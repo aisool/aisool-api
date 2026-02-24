@@ -54,12 +54,12 @@ int main() {
     if(curl) {
         std::string readBuffer;
         struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Authorization: Bearer ${safeKey}"); ${warning}
+        headers = curl_slist_append(headers, "Authorization: Bearer YOUR_API_KEY"); 
         headers = curl_slist_append(headers, "Content-Type: application/json");
 
         curl_easy_setopt(curl, CURLOPT_URL, "https://api.aisool.com/v1/images/generations");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\":\"A fantasy forest\",\"n\":1"}");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{"prompt":"A fantasy forest","n":1,"size":"1024x1024"}");
         
         auto json = nlohmann::json::parse(readBuffer);
         std::cout << "Image Data: " << json["data"][0]["url"] << std::endl;
