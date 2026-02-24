@@ -5,6 +5,8 @@
 // yarn add aisool-sdk
 
 import { AisoolClient } from 'aisool-sdk';
+// Or use esm.sh 
+// import { AisoolClient } from 'https://esm.sh/aisool-sdk';
 
 const client = new AisoolClient('YOUR_API_KEY');
 
