@@ -6,7 +6,7 @@ Future<Map<String, dynamic>?> sendMessage(String userMessage) async {
   final url = Uri.parse('https://api.aisool.com/v1/chat/completions');
   
   final headers = {
-    'Authorization': 'Bearer ${key}',
+    'Authorization': 'Bearer YOUR_API_KEY',
     'Content-Type': 'application/json',
   };
   
