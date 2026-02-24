@@ -53,3 +53,28 @@ class Program
         }
     }
 }
+
+// image generation
+
+using System;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        var client = new HttpClient();
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_API_KEY"); 
+
+        var payload = new { prompt = "Cybernetic eagle in flight", n = 1, size = "1024x1024" };
+        var content = new StringContent(JsonSerializer.Serialize(payload), System.Text.Encoding.UTF8, "application/json");
+
+        var response = await client.PostAsync("https://api.aisool.com/v1/images/generations", content);
+        var responseBody = await response.Content.ReadAsStringAsync();
+        
+        var data = JsonSerializer.Deserialize<JsonElement>(responseBody);
+        Console.WriteLine("Image Source: " + data.GetProperty("data")[0].GetProperty("url").GetString());
+    }
+}
